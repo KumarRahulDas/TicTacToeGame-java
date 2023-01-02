@@ -6,6 +6,11 @@ public class TicTacToeGame {
     public static char inputUser;
     public static char inputC;
 
+    public static char[] board = new char[10];
+
+    public static void main(String[] args) {
+
+
 
 
 
@@ -24,15 +29,23 @@ public class TicTacToeGame {
     public static void main(String[] args) {
         char[] board = new char[10];
 
+
         for (int i = 1; i < 10; i++) {
             board[i] = ' ';
         }
+
+        inputUser = input();
+
         char inputUser = input();
+
 
         if (inputUser == 'X') {
             inputC = 'O';
         } else {
             inputC = 'X';
+
+
+
 
         }
         TicTacToeGame.showBoard();
@@ -51,6 +64,8 @@ public class TicTacToeGame {
         System.out.println("TicTacToe Board");
 
 
+
+
         }TicTacToeGame.showBoard();
 
         }
@@ -66,6 +81,7 @@ public class TicTacToeGame {
     }
 
     public static void showBoard() {
+
 
         System.out.println(board[1] + " | " + board[2] + " | " + board[3]);
         System.out.println("---------");
@@ -84,9 +100,24 @@ public class TicTacToeGame {
                 board[select] = inputUser;
             }
         }
+    }
+
+
+    }
+
+    public static void uSelection() {
+        System.out.println("Please enter the index from 1 to 9 to make the move");
+        Scanner in1 = new Scanner(System.in);
+        int select = in1.nextInt();
+        for (int i = 1; i < 10; i++) {
+            if (board[select] == ' ') {
+                board[select] = inputUser;
+            }
+        }
 
 
 
 
     }
 }
+
