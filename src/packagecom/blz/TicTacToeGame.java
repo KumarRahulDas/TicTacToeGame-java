@@ -1,11 +1,15 @@
 package com.blz;
 
+
 import java.util.Objects;
+
+
 import java.util.Scanner;
 
 public class TicTacToeGame {
     public static char inputUser;
     public static char inputC;
+
     public static char[] board = new char[10];
     public static char toss;
     public static Scanner in = new Scanner(System.in);
@@ -21,10 +25,72 @@ public class TicTacToeGame {
             board[i] = ' ';
         }
         inputUser = input();
+
+
+    public static char[] board = new char[10];
+    public static String toss;
+    public static Scanner in = new Scanner(System.in);
+    public static String status;
+    public static String check;
+
+    public static void main(String[] args) {
+
+
+    public static char[] board = new char[10];
+    public static String toss;
+    public static Scanner in = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+
+    public static char[] board = new char[10];
+
+    public static void main(String[] args) {
+
+
+
+
+
+    public static char[] board = new char[10];
+
+    public static void main(String[] args) {
+
+
+        for (int i = 1; i < 10; i++) {
+            board[i] = ' ';
+        }
+        inputUser = input();
+
+
+
+    public static void main(String[] args) {
+        char[] board = new char[10];
+
+
+
+
+        for (int i = 1; i < 10; i++) {
+            board[i] = ' ';
+        }
+
+        inputUser = input();
+
+
+        inputUser = input();
+
+
+        inputUser = input();
+
+        char inputUser = input();
+
+
+
+
         if (inputUser == 'X') {
             inputC = 'O';
         } else {
             inputC = 'X';
+
         }
         TicTacToeGame.showBoard();
         char turn = toss();
@@ -48,6 +114,27 @@ public class TicTacToeGame {
                     break;
                 }
 
+
+
+
+
+        }
+        TicTacToeGame.showBoard();
+        String turn = toss();
+        if (turn.equals("Won")) {
+
+            TicTacToeGame.uSelection();
+            for (int i = 1; i <= 4; i++) {
+                TicTacToeGame.showBoard();
+                TicTacToeGame.cSelection();
+                TicTacToeGame.showBoard();
+                TicTacToeGame.uSelection();
+                TicTacToeGame.showBoard();
+                check = check();
+                if (check == "Done") {
+                    break;
+                }
+
             }
         } else {
             TicTacToeGame.cSelection();
@@ -56,6 +143,7 @@ public class TicTacToeGame {
                 TicTacToeGame.uSelection();
                 TicTacToeGame.showBoard();
                 check = check();
+
                 if (Objects.equals(check, "Done")) {
                     break;
                 }
@@ -85,6 +173,44 @@ public class TicTacToeGame {
                 System.out.println("Enter a valid input");
             }
         }
+
+                if (check == "Done") {
+                    break;
+                }
+                TicTacToeGame.cSelection();
+                TicTacToeGame.showBoard();
+            }
+        }
+
+            for (int i = 1; i <= 4; i++) {
+                TicTacToeGame.uSelection();
+                TicTacToeGame.showBoard();
+                TicTacToeGame.cSelection();
+                TicTacToeGame.showBoard();
+            }
+        } else {
+            for (int i = 1; i <= 4; i++) {
+                TicTacToeGame.cSelection();
+                TicTacToeGame.showBoard();
+                TicTacToeGame.uSelection();
+                TicTacToeGame.showBoard();
+            }
+        }
+        if (turn.equals("Won")) {
+            TicTacToeGame.uSelection();
+            TicTacToeGame.showBoard();
+        } else {
+            TicTacToeGame.cSelection();
+            TicTacToeGame.showBoard();
+
+        }
+
+    }
+
+    public static char input() {
+        System.out.println("Please enter your input in X / O");
+        char inputU = in.next().charAt(0);
+
         return inputU;
     }
 
@@ -101,9 +227,15 @@ public class TicTacToeGame {
         int j = 0;
         while (j < 1) {
             System.out.println("Please enter the index from 1 to 9 to make the move");
+
             int selection = in.nextInt();
             if (board[selection] == ' ') {
                 board[selection] = inputUser;
+
+            int select = in.nextInt();
+            if (board[select] == ' ') {
+                board[select] = inputUser;
+
                 j = 1;
             } else {
                 System.out.println("Seat Occupied, please enter a different input");
@@ -114,6 +246,7 @@ public class TicTacToeGame {
     public static void cSelection() {
         int i = 0;
         while (i < 1) {
+
             choice = (int) ((Math.floor(Math.random() * 10) % 9) + 1);
             if (board[choice] == ' ') {
                 board[choice] = inputC;
@@ -146,9 +279,38 @@ public class TicTacToeGame {
         } else {
             System.out.println("You Lose");
             toss = 'L';
+
+            int select = (int) ((Math.floor(Math.random() * 10) % 8) + 1);
+            if (board[select] == ' ') {
+                board[select] = inputC;
+                i = 1;
+            }
+        }
+
+    }
+
+    public static String toss() {
+        System.out.println("Please enter your call Heads/Tails");
+        String call = in.next();
+        int choice = (int) ((Math.floor(Math.random() * 10) % 2));
+        if (choice == 1) {
+            toss = "Heads";
+        } else {
+            toss = "Tails";
+        }
+        if (toss.equals(call)) {
+            System.out.println("You Won");
+            toss = "Won";
+        } else {
+            System.out.println("You Lose");
+            toss = "Lose";
+
         }
         return toss;
     }
+
+
+
 
 
     public static String check() {
@@ -163,8 +325,12 @@ public class TicTacToeGame {
                 System.out.println("Player Won");
                 status = "Done";
             }
+
         }
         if (board[3] == inputUser) {
+
+        } else if (board[3] == inputUser) {
+
             if ((board[6] == inputUser) && (board[9] == inputUser)) {
                 System.out.println("Player Won");
                 status = "Done";
@@ -172,14 +338,22 @@ public class TicTacToeGame {
                 System.out.println("PLayer Won");
                 status = "Done";
             }
+
         }
         if (board[7] == inputUser) {
+
+        } else if (board[7] == inputUser) {
+
             if ((board[8] == inputUser) && (board[9] == inputUser)) {
                 System.out.println("Player Won");
                 status = "Done";
             }
+
         }
         if (board[5] == inputUser) {
+
+        } else if (board[5] == inputUser) {
+
             if ((board[2] == inputUser) && (board[8] == inputUser)) {
                 System.out.println("Player Won");
                 status = "Done";
@@ -190,6 +364,7 @@ public class TicTacToeGame {
         }
         return status;
     }
+
 
     public static String cCheck() {
         if (board[1] == inputC) {
@@ -330,3 +505,109 @@ public class TicTacToeGame {
         return report;
     }
 }
+
+}
+
+    }
+
+    public static String toss() {
+        System.out.println("Please enter your call Heads/Tails");
+        String call = in.next();
+        int choice = (int) ((Math.floor(Math.random() * 10) % 2));
+        if (choice == 1) {
+            toss = "Heads";
+        } else {
+            toss = "Tails";
+        }
+        if (toss.equals(call)) {
+            System.out.println("You Won");
+            toss = "Won";
+        } else {
+            System.out.println("You Lose");
+            toss = "Lose";
+        }
+        return toss;
+    }
+}
+
+
+
+
+
+        }
+        TicTacToeGame.showBoard();
+        TicTacToeGame.uSelection();
+        TicTacToeGame.showBoard();
+    }
+
+    public static char input() {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Please enter your input in X / O");
+        char inputU = in.next().charAt(0);
+        return inputU;
+    }
+
+    public static void showBoard() {
+        System.out.println("TicTacToe Board");
+
+
+
+
+        }TicTacToeGame.showBoard();
+
+        }
+
+    }
+
+    public static char input() {
+        System.out.println("Please enter your input in X / O");
+        Scanner in = new Scanner(System.in);
+        char inputU = in.next().charAt(0);
+        return inputU;
+
+    }
+
+    public static void showBoard() {
+
+
+        System.out.println(board[1] + " | " + board[2] + " | " + board[3]);
+        System.out.println("---------");
+        System.out.println(board[4] + " | " + board[5] + " | " + board[6]);
+        System.out.println("---------");
+        System.out.println(board[7] + " | " + board[8] + " | " + board[9]);
+
+    }
+
+    public static void uSelection() {
+        System.out.println("Please enter the index from 1 to 9 to make the move");
+        Scanner in1 = new Scanner(System.in);
+        int select = in1.nextInt();
+        for (int i = 1; i < 10; i++) {
+            if (board[select] == ' ') {
+                board[select] = inputUser;
+            }
+        }
+    }
+
+
+    }
+
+    public static void uSelection() {
+        System.out.println("Please enter the index from 1 to 9 to make the move");
+        Scanner in1 = new Scanner(System.in);
+        int select = in1.nextInt();
+        for (int i = 1; i < 10; i++) {
+            if (board[select] == ' ') {
+                board[select] = inputUser;
+            }
+        }
+
+
+
+
+    }
+}
+
+
+
+
