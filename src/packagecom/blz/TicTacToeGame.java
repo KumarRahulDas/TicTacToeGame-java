@@ -5,9 +5,15 @@ import java.util.Scanner;
 public class TicTacToeGame {
     public static char inputUser;
     public static char inputC;
+
     public static char[] board = new char[10];
 
     public static void main(String[] args) {
+
+
+
+    public static void main(String[] args) {
+        char[] board = new char[10];
 
         for (int i = 1; i < 10; i++) {
             board[i] = ' ';
@@ -17,7 +23,11 @@ public class TicTacToeGame {
             inputC = 'O';
         } else {
             inputC = 'X';
+
         }TicTacToeGame.showBoard();
+
+        }
+
     }
 
     public static char input() {
@@ -25,6 +35,7 @@ public class TicTacToeGame {
         Scanner in = new Scanner(System.in);
         char inputU = in.next().charAt(0);
         return inputU;
+
     }
 
     public static void showBoard() {
@@ -33,5 +44,7 @@ public class TicTacToeGame {
         System.out.println(board[4] + " | " + board[5] + " | " + board[6]);
         System.out.println("---------");
         System.out.println(board[7] + " | " + board[8] + " | " + board[9]);
+
+
     }
 }
