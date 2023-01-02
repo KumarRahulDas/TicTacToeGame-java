@@ -13,6 +13,10 @@ import java.util.Objects;
 import java.util.Objects;
 
 
+import java.util.Objects;
+
+
+
 
 
 
@@ -31,11 +35,16 @@ public class TicTacToeGame {
 
 
 
+
+
+
     public static char[] board = new char[10];
     public static char toss;
     public static Scanner in = new Scanner(System.in);
     public static String status;
     public static String check;
+
+
 
 
 
@@ -46,9 +55,22 @@ public class TicTacToeGame {
 
 
 
+
     public static String select = null;
     public static int choice;
     public static String report;
+
+
+    public static void main(String[] args) {
+
+        for (int i = 1; i < 10; i++) {
+            board[i] = ' ';
+        }
+        inputUser = input();
+        if (inputUser == 'X') {
+            inputC = 'O';
+        } else {
+            inputC = 'X';
 
 
     public static void main(String[] args) {
@@ -164,6 +186,7 @@ public class TicTacToeGame {
 
 
 
+
         }
         TicTacToeGame.showBoard();
         char turn = toss();
@@ -173,6 +196,9 @@ public class TicTacToeGame {
                 TicTacToeGame.showBoard();
                 select = cPlay();
 
+
+
+
                 if (i == 4) {
                     if (select == null) {
                         select = lastMove();
@@ -180,11 +206,17 @@ public class TicTacToeGame {
                 }
 
 
+
+
+
                 if (select == null) {
                     TicTacToeGame.cSelection();
                 }
                 TicTacToeGame.showBoard();
                 check = cCheck();
+
+
+
 
 
 
@@ -198,6 +230,11 @@ public class TicTacToeGame {
                 if (Objects.equals(check, "Done")) {
                     break;
                 }
+
+            }
+        } else {
+            TicTacToeGame.cSelection();
+
 
             }
         } else {
@@ -238,11 +275,15 @@ public class TicTacToeGame {
             TicTacToeGame.cSelection();
 
 
+
             for (int i = 1; i <= 4; i++) {
                 TicTacToeGame.showBoard();
                 TicTacToeGame.uSelection();
                 TicTacToeGame.showBoard();
                 check = check();
+
+
+
 
                 if (Objects.equals(check, "Done")) {
                     break;
@@ -256,6 +297,8 @@ public class TicTacToeGame {
                 if (select == null) {
                     TicTacToeGame.cSelection();
                 }
+
+
 
 
                 if (Objects.equals(check, "Done")) {
@@ -276,6 +319,7 @@ public class TicTacToeGame {
                 }
 
 
+
                 check = cCheck();
                 if (Objects.equals(check, "Done")) {
                     break;
@@ -283,6 +327,9 @@ public class TicTacToeGame {
             }
             showBoard();
         }
+
+
+
 
 
 
@@ -340,6 +387,9 @@ public class TicTacToeGame {
                 i = 1;
             }
         }
+
+
+
 
     }
 
@@ -662,6 +712,9 @@ public class TicTacToeGame {
             report = "ok";
         }
         return report;
+
+    }
+}
     }
 }
 
@@ -1446,6 +1499,7 @@ public class TicTacToeGame {
 
     }
 }
+
 
 
 
